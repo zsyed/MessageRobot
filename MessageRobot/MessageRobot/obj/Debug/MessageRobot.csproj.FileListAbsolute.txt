@@ -96,6 +96,5 @@ C:\projects\MyGitProject\MessageRobot\MessageRobot\MessageRobot\bin\ko\System.Sp
 C:\projects\MyGitProject\MessageRobot\MessageRobot\MessageRobot\bin\ru\System.Spatial.resources.dll
 C:\projects\MyGitProject\MessageRobot\MessageRobot\MessageRobot\bin\zh-Hans\System.Spatial.resources.dll
 C:\projects\MyGitProject\MessageRobot\MessageRobot\MessageRobot\bin\zh-Hant\System.Spatial.resources.dll
-C:\projects\MyGitProject\MessageRobot\MessageRobot\MessageRobot\obj\Debug\MessageRobot.csprojResolveAssemblyReference.cache
 C:\projects\MyGitProject\MessageRobot\MessageRobot\MessageRobot\obj\Debug\MessageRobot.dll
 C:\projects\MyGitProject\MessageRobot\MessageRobot\MessageRobot\obj\Debug\MessageRobot.pdb
