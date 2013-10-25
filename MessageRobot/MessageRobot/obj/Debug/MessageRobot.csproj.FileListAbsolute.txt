@@ -98,3 +98,6 @@ C:\projects\MyGitProject\MessageRobot\MessageRobot\MessageRobot\bin\zh-Hans\Syst
 C:\projects\MyGitProject\MessageRobot\MessageRobot\MessageRobot\bin\zh-Hant\System.Spatial.resources.dll
 C:\projects\MyGitProject\MessageRobot\MessageRobot\MessageRobot\obj\Debug\MessageRobot.dll
 C:\projects\MyGitProject\MessageRobot\MessageRobot\MessageRobot\obj\Debug\MessageRobot.pdb
+C:\projects\MyGitProject\MessageRobot\MessageRobot\MessageRobot\bin\Elmah.dll
+C:\projects\MyGitProject\MessageRobot\MessageRobot\MessageRobot\bin\Elmah.Mvc.dll
+C:\projects\MyGitProject\MessageRobot\MessageRobot\MessageRobot\obj\Debug\MessageRobot.csprojResolveAssemblyReference.cache
