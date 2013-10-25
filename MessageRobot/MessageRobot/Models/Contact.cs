@@ -15,5 +15,6 @@ namespace MessageRobot.Models
         public bool Unsubscribe { get; set; }
         public string Name { get; set; }
         public string PhoneNumber { get; set; }
+
     }
 }
