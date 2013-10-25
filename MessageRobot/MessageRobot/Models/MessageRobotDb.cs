@@ -13,5 +13,6 @@ namespace MessageRobot.Models
         {
         }
         public DbSet<Contact> Contacts { get; set; }
+        public DbSet<Message> Messages { get; set; }
     }
 }
