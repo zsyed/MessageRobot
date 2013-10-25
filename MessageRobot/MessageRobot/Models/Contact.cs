@@ -16,6 +16,6 @@ namespace MessageRobot.Models
         public string Name { get; set; }
         public string PhoneNumber { get; set; }
 
-        public ICollection<Message> Messages { get; set; }
+        public virtual ICollection<Message> Messages { get; set; }
     }
 }

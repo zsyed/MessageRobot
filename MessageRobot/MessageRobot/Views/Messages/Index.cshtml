@@ -1,0 +1,13 @@
+﻿@model MessageRobot.Models.Contact
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>@Model.Name</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@Html.Partial("_Messages", @Model.Messages)

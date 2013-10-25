@@ -1,0 +1,30 @@
+﻿@model IEnumerable<MessageRobot.Models.Message>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Day)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Time)
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Day)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Time)
+        </td>
+
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) 
+
+        </td>
+    </tr>
+}
+
+</table>
