@@ -4,10 +4,10 @@
     ViewBag.Title = "Index";
 }
 
-<h2>@Model.Name</h2>
+<h2>Schedule Messages for @Model.Name</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create", new { contactId = Model.Id})
 </p>
 
 @Html.Partial("_Messages", @Model.Messages)
