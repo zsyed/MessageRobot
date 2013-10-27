@@ -15,20 +15,52 @@
 
         @Html.HiddenFor(model => model.Id)
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Day)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Day)
-            @Html.ValidationMessageFor(model => model.Day)
-        </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Time)
-        </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Time)
-            @Html.ValidationMessageFor(model => model.Time)
+  @(Html.Kendo().DropDownList()
+          .Name("day")
+          .DataTextField("Text")
+          .DataValueField("Value")
+                     .BindTo(new List<SelectListItem>() {
+              new SelectListItem() {
+                  Text = "Monday",
+                  Value = "Monday"
+              },
+              new SelectListItem() {
+                  Text = "Tuesday",
+                  Value = "Tuesday"
+              },
+              new SelectListItem() {
+                  Text = "Wednesday",
+                  Value = "Wednesday"
+              },
+                            new SelectListItem() {
+                  Text = "Thursday",
+                  Value ="Thursday"
+              },
+              new SelectListItem() {
+                  Text = "Friday",
+                  Value = "Friday"
+              },
+              new SelectListItem() {
+                  Text = "Saturday",
+                  Value ="Saturday"
+              },
+              new SelectListItem() {
+                  Text = "Sunday",
+                  Value = "Sunday"
+              }
+          })
+          .Value("1")
+          )
+
+
+
+
+           @(Html.Kendo().TimePicker()
+        .Name("timepicker")
+        .Value("10:00 AM")
+)
         </div>
 
         @Html.HiddenFor(model => model.ContactId)
