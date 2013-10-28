@@ -63,7 +63,6 @@ namespace MessageRobot.Controllers
         {
             if (ModelState.IsValid)
             {
-                _db.Messages.Add(message);
                 _db.Entry(message).State = System.Data.EntityState.Modified;
                 _db.SaveChanges();
                 return RedirectToAction("Index", new { id = message.ContactId });

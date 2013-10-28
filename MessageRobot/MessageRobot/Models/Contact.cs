@@ -11,8 +11,7 @@ namespace MessageRobot.Models
         public int Id { get; set; }
         [ScaffoldColumn(false)]
         public string LoginName { get; set; }
-        [ScaffoldColumn(false)]
-        public bool Unsubscribe { get; set; }
+        public string Subscribe { get; set; }
         public string Name { get; set; }
         public string PhoneNumber { get; set; }
 

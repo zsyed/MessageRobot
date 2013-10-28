@@ -18,10 +18,10 @@
 
         <div class="editor-field">
   @(Html.Kendo().DropDownList()
-          .Name("day")
+          .Name("MessageDay")
           .DataTextField("Text")
           .DataValueField("Value")
-                     .BindTo(new List<SelectListItem>() {
+          .BindTo(new List<SelectListItem>() {
               new SelectListItem() {
                   Text = "Monday",
                   Value = "Monday"
@@ -51,18 +51,34 @@
                   Value = "Sunday"
               }
           })
-          .Value("1")
           )
 
 
-
-
-           @(Html.Kendo().TimePicker()
-        .Name("timepicker")
-        .Value("10:00 AM")
-)
-        </div>
-
+            @(Html.Kendo().TimePicker()
+            .Name("MessageTime")
+            )
+            
+                          @(Html.Kendo().DropDownList()
+          .Name("MessageType")
+          .DataTextField("Text")
+          .DataValueField("Value")
+                     .BindTo(new List<SelectListItem>() {
+              new SelectListItem() {
+                  Text = "SMS",
+                  Value = "SMS"
+              }
+          })
+          )
+            
+            <div><br /></div>
+             </div>
+         <div class="editor-field">
+            @(Html.Kendo().AutoComplete()
+            .Name("MessageText")
+            .Placeholder("reminder message..")
+            )
+       
+            </div>
         @Html.HiddenFor(model => model.ContactId)
 
         <p>
@@ -78,3 +94,17 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+
+
+<style scoped="scoped">
+
+
+
+	.k-autocomplete
+	{
+		width: 450px;
+		vertical-align: middle;
+	}
+
+	
+</style>

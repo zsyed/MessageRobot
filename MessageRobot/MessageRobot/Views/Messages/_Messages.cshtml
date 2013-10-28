@@ -2,22 +2,36 @@
 <table>
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Day)
+            Day
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Time)
+            Time
         </th>
 
-        <th></th>
+        <th>
+            Message
+        </th>
+
+        <th>
+            SMS
+        </th>
+
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Day)
+            @Html.DisplayFor(modelItem => item.MessageDay)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Time)
+            @Html.DisplayFor(modelItem => item.MessageTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MessageText)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.MessageType)
         </td>
 
         <td>

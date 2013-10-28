@@ -51,6 +51,7 @@ namespace MessageRobot.Controllers
         {
             if (ModelState.IsValid)
             {
+                contact.LoginName = HttpContext.User.Identity.Name;
                 db.Contacts.Add(contact);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -81,6 +82,7 @@ namespace MessageRobot.Controllers
         {
             if (ModelState.IsValid)
             {
+                contact.LoginName = HttpContext.User.Identity.Name;
                 db.Entry(contact).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

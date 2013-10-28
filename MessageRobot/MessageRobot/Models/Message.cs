@@ -9,11 +9,10 @@ namespace MessageRobot.Models
     public class Message
     {
         public int Id { get; set; }
-        public string Day { get; set; }
-
-        [DataType(DataType.Time)]
-        public TimeSpan Time { get; set; }
-
+        public string MessageDay { get; set; }
+        public string MessageTime { get; set; }
+        public string MessageText { get; set; }
+        public string MessageType { get; set; }
         public int ContactId { get; set; }
     }
 }

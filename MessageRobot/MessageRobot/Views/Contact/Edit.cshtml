@@ -31,6 +31,32 @@
             @Html.ValidationMessageFor(model => model.PhoneNumber)
         </div>
 
+                <div class="editor-label">
+            @Html.LabelFor(model => model.Subscribe)
+        </div>
+        <div class="editor-field">
+              @(Html.Kendo().DropDownList()
+          .Name("Subscribe")
+          .DataTextField("Text")
+          .DataValueField("Value")
+                     .BindTo(new List<SelectListItem>() {
+              
+
+              new SelectListItem() {
+                  Text = "Yes",
+                  Value ="Yes"
+              },
+              new SelectListItem() {
+                  Text = "No",
+                  Value = "No"
+              }
+          })
+
+          )
+
+
+        </div>
+
         <p>
             <input type="submit" value="Save" />
         </p>
