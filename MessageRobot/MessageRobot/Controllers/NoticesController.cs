@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MessageRobot.Models;
+using Twilio;
 
 namespace MessageRobot.Controllers
 {
@@ -74,6 +75,19 @@ namespace MessageRobot.Controllers
         {
             _db.Dispose();
             base.Dispose(disposing);
+        }
+
+        public void SendSms()
+        {
+            var smsNumber = "+19492099893";
+            var smsText = "2nd notice from the new reminder application.";
+            string twilioPhoneNumber = "+17144595176";
+
+            string AccountSid = "AC36241612702f6674342ac88458c378c8";
+            string AuthToken = "5c81d4a1aec022545daf8da956a6b729";
+
+            var twilio = new TwilioRestClient(AccountSid, AuthToken);
+            var notice = twilio.SendSmsMessage(twilioPhoneNumber, smsNumber, smsText, "");
         }
 
     }

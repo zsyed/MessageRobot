@@ -80,3 +80,6 @@ C:\projects\MyGitProject\MessageRobot\MessageRobot\MessageRobot.Tests\bin\Debug\
 C:\projects\MyGitProject\MessageRobot\MessageRobot\MessageRobot.Tests\obj\Debug\MessageRobot.Tests.csprojResolveAssemblyReference.cache
 C:\projects\MyGitProject\MessageRobot\MessageRobot\MessageRobot.Tests\obj\Debug\MessageRobot.Tests.dll
 C:\projects\MyGitProject\MessageRobot\MessageRobot\MessageRobot.Tests\obj\Debug\MessageRobot.Tests.pdb
+C:\projects\MyGitProject\MessageRobot\MessageRobot\MessageRobot.Tests\bin\Debug\Twilio.Api.dll
+C:\projects\MyGitProject\MessageRobot\MessageRobot\MessageRobot.Tests\bin\Debug\Twilio.Api.pdb
+C:\projects\MyGitProject\MessageRobot\MessageRobot\MessageRobot.Tests\bin\Debug\Twilio.Api.xml
