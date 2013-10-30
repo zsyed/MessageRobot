@@ -7,14 +7,14 @@ using MessageRobot.Models;
 
 namespace MessageRobot.Controllers
 {
-    public class MessagesController : Controller
+    public class NoticesController : Controller
     {
         //
         // GET: /Messages/
 
         MessageRobotDb _db = new MessageRobotDb();
 
-        public ActionResult Index( [Bind(Prefix="id")] int contactId)
+        public ActionResult Index([Bind(Prefix = "id")] int contactId)
         {
             var contact = _db.Contacts.Find(contactId);
             if (contact != null)
@@ -33,41 +33,41 @@ namespace MessageRobot.Controllers
         [HttpGet]
         public ActionResult Edit(int id)
         {
-            var model = _db.Messages.Find(id);
+            var model = _db.Notices.Find(id);
             return View(model);
         }
 
         [HttpGet]
         public ActionResult Delete(int id)
         {
-            var message = _db.Messages.Find(id);
-            _db.Messages.Remove(message);
+            var message = _db.Notices.Find(id);
+            _db.Notices.Remove(message);
             _db.SaveChanges();
             return RedirectToAction("Index", new { id = message.ContactId });
         }
 
         [HttpPost]
-        public ActionResult Create(Message message)
+        public ActionResult Create(Notice notice)
         {
             if (ModelState.IsValid)
             {
-                _db.Messages.Add(message);
+                _db.Notices.Add(notice);
                 _db.SaveChanges();
-                return RedirectToAction("Index", new {id = message.ContactId});
+                return RedirectToAction("Index", new { id = notice.ContactId });
             }
-            return View(message);
+            return View(notice);
         }
 
         [HttpPost]
-        public ActionResult Edit(Message message)
+        public ActionResult Edit(Notice notice)
         {
             if (ModelState.IsValid)
             {
-                _db.Entry(message).State = System.Data.EntityState.Modified;
+                _db.Entry(notice).State = System.Data.EntityState.Modified;
                 _db.SaveChanges();
-                return RedirectToAction("Index", new { id = message.ContactId });
+                return RedirectToAction("Index", new { id = notice.ContactId });
             }
-            return View(message);
+            return View(notice);
         }
 
         protected override void Dispose(bool disposing)

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MessageRobot.Models.Message>
+﻿@model IEnumerable<MessageRobot.Models.Notice>
 <table>
     <tr>
         <th>
@@ -25,17 +25,17 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.MessageDay)
+            @Html.DisplayFor(modelItem => item.NoticeDay)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.MessageTime)
+            @Html.DisplayFor(modelItem => item.NoticeTime)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.MessageText)
+            @Html.DisplayFor(modelItem => item.NoticeText)
         </td>
 
         <td>
-            @Html.DisplayFor(modelItem => item.MessageType)
+            @Html.DisplayFor(modelItem => item.NoticeType)
         </td>
 
         <td>

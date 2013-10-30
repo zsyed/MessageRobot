@@ -1,4 +1,4 @@
-﻿@model MessageRobot.Models.Message
+﻿@model MessageRobot.Models.Notice
 
 @{
     ViewBag.Title = "Edit";
@@ -18,7 +18,7 @@
 
         <div class="editor-field">
   @(Html.Kendo().DropDownList()
-          .Name("MessageDay")
+          .Name("NoticeDay")
           .DataTextField("Text")
           .DataValueField("Value")
           .BindTo(new List<SelectListItem>() {
@@ -55,11 +55,11 @@
 
 
             @(Html.Kendo().TimePicker()
-            .Name("MessageTime")
+            .Name("NoticeTime")
             )
             
                           @(Html.Kendo().DropDownList()
-          .Name("MessageType")
+          .Name("NoticeType")
           .DataTextField("Text")
           .DataValueField("Value")
                      .BindTo(new List<SelectListItem>() {
@@ -87,7 +87,7 @@
              </div>
          <div class="editor-field">
             @(Html.Kendo().AutoComplete()
-            .Name("MessageText")
+            .Name("NoticeText")
             .Placeholder("reminder message..")
             )
        

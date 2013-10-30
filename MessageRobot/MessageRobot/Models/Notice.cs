@@ -6,13 +6,13 @@ using System.Web;
 
 namespace MessageRobot.Models
 {
-    public class Message
+    public class Notice
     {
         public int Id { get; set; }
-        public string MessageDay { get; set; }
-        public string MessageTime { get; set; }
-        public string MessageText { get; set; }
-        public string MessageType { get; set; }
+        public string NoticeDay { get; set; }
+        public string NoticeTime { get; set; }
+        public string NoticeText { get; set; }
+        public string NoticeType { get; set; }
         public string TimeZone { get; set; }
         public int ContactId { get; set; }
     }
