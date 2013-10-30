@@ -13,6 +13,7 @@ namespace MessageRobot.Models
         public string MessageTime { get; set; }
         public string MessageText { get; set; }
         public string MessageType { get; set; }
+        public string TimeZone { get; set; }
         public int ContactId { get; set; }
     }
 }

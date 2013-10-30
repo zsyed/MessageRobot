@@ -9,11 +9,15 @@
         </th>
 
         <th>
-            Message
+            Text
         </th>
 
         <th>
-            SMS
+            Type
+        </th>
+
+        <th>
+            Time Zone
         </th>
 
     </tr>
@@ -34,6 +38,13 @@
             @Html.DisplayFor(modelItem => item.MessageType)
         </td>
 
+        <td>
+            @Html.DisplayFor(modelItem => item.TimeZone)
+        </td>
+
+        <td></td>
+
+        <td></td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) 
         </td>

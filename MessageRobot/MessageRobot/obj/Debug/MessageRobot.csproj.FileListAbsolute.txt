@@ -100,4 +100,3 @@ C:\projects\MyGitProject\MessageRobot\MessageRobot\MessageRobot\obj\Debug\Messag
 C:\projects\MyGitProject\MessageRobot\MessageRobot\MessageRobot\obj\Debug\MessageRobot.pdb
 C:\projects\MyGitProject\MessageRobot\MessageRobot\MessageRobot\bin\Elmah.dll
 C:\projects\MyGitProject\MessageRobot\MessageRobot\MessageRobot\bin\Elmah.Mvc.dll
-C:\projects\MyGitProject\MessageRobot\MessageRobot\MessageRobot\obj\Debug\MessageRobot.csprojResolveAssemblyReference.cache
