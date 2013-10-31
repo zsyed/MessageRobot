@@ -14,7 +14,7 @@ namespace MessageRobot.Models
         public string Subscribe { get; set; }
         public string Name { get; set; }
         public string PhoneNumber { get; set; }
-
+        public string TimeZone { get; set; }
         public virtual ICollection<Notice> Notices { get; set; }
     }
 }

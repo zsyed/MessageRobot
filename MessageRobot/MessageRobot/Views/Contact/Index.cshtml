@@ -17,6 +17,9 @@
         <th>
             @Html.DisplayNameFor(model => model.PhoneNumber)
         </th>
+                <th>
+            @Html.DisplayNameFor(model => model.TimeZone)
+        </th>
         <th>
             Subscribe
         </th>
@@ -29,6 +32,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.PhoneNumber)
+        </td>
+                <td>
+            @Html.DisplayFor(modelItem => item.TimeZone)
         </td>
                 <td>
             @Html.DisplayFor(modelItem => item.Subscribe)

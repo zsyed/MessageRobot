@@ -29,6 +29,20 @@
             @Html.ValidationMessageFor(model => model.PhoneNumber)
         </div>
 
+        <div>
+                                  @(Html.Kendo().DropDownList()
+          .Name("TimeZone")
+          .DataTextField("Text")
+          .DataValueField("Value")
+                     .BindTo(new List<SelectListItem>() {
+              new SelectListItem() {
+                  Text = "PST",
+                  Value = "PST"
+              }
+          })
+          )
+            </div>
+
         <p>
             <input type="submit" value="Create" />
         </p>
