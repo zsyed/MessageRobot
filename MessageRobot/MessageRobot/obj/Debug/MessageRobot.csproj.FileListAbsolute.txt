@@ -118,4 +118,3 @@ C:\projects\MyGitProject\MessageRobot\MessageRobot\MessageRobot\bin\Twilio.Twiml
 C:\projects\MyGitProject\MessageRobot\MessageRobot\MessageRobot\bin\Twilio.Twiml.xml
 C:\projects\MyGitProject\MessageRobot\MessageRobot\MessageRobot\bin\Twilio.WebMatrix.pdb
 C:\projects\MyGitProject\MessageRobot\MessageRobot\MessageRobot\bin\Twilio.WebMatrix.xml
-C:\projects\MyGitProject\MessageRobot\MessageRobot\MessageRobot\obj\Debug\MessageRobot.csprojResolveAssemblyReference.cache

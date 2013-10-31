@@ -9,6 +9,7 @@ using MessageRobot.Models;
 
 namespace MessageRobot.Controllers
 {
+    [Authorize]
     public class ContactController : Controller
     {
         private MessageRobotDb db = new MessageRobotDb();
@@ -52,6 +53,7 @@ namespace MessageRobot.Controllers
             if (ModelState.IsValid)
             {
                 contact.LoginName = HttpContext.User.Identity.Name;
+                contact.Subscribe = "Yes";
                 db.Contacts.Add(contact);
                 db.SaveChanges();
                 return RedirectToAction("Index");
