@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -77,14 +78,17 @@ namespace MessageRobot.Controllers
             base.Dispose(disposing);
         }
 
-        public void SendSms()
+        public void SendNotice()
         {
-            var smsNumber = "+19492099893";
-            var smsText = "2nd notice from the new reminder application.";
-            string twilioPhoneNumber = "+17144595176";
+            SendSms("+19492099893", "5th notice from the new reminder application.");
+        }
 
-            string AccountSid = "AC36241612702f6674342ac88458c378c8";
-            string AuthToken = "5c81d4a1aec022545daf8da956a6b729";
+        private void SendSms(string smsNumber, string smsText)
+        {
+            string twilioPhoneNumber = ConfigurationManager.AppSettings["FromPhoneNumber"];
+
+            string AccountSid = ConfigurationManager.AppSettings["AccountSID"];
+            string AuthToken = ConfigurationManager.AppSettings["AuthToken"];
 
             var twilio = new TwilioRestClient(AccountSid, AuthToken);
             var notice = twilio.SendSmsMessage(twilioPhoneNumber, smsNumber, smsText, "");
