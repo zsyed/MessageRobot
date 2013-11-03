@@ -221,6 +221,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NoticesController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
@@ -230,6 +231,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Contact.cs" />
+    <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\MessageRobotDb.cs" />
     <Compile Include="Models\Notice.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -636,6 +638,11 @@
     <Content Include="Views\Notices\_Notices.cshtml" />
     <Content Include="Views\Notices\Create.cshtml" />
     <Content Include="Views\Notices\Edit.cshtml" />
+    <Content Include="Views\Customer\Index.cshtml" />
+    <Content Include="Views\Customer\Details.cshtml" />
+    <Content Include="Views\Customer\Create.cshtml" />
+    <Content Include="Views\Customer\Edit.cshtml" />
+    <Content Include="Views\Customer\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
