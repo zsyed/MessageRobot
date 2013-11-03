@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
@@ -21,10 +22,20 @@ namespace MessageRobot.Models
     [Table("UserProfile")]
     public class UserProfile
     {
+
+        public UserProfile()
+        {
+            IsSmsVerified = false;
+        }
+
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int UserId { get; set; }
         public string UserName { get; set; }
+        public string Mobile { get; set; }
+        [DefaultValue(false)]
+        public bool IsSmsVerified { get; set; }
+        public string SmsVerificationCode { get; set; }
     }
 
     public class RegisterExternalLoginModel
@@ -86,6 +97,11 @@ namespace MessageRobot.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        [DataType(DataType.PhoneNumber)]
+        [Display(Name = "Mobile")]
+        public string Mobile { get; set; }
     }
 
     public class ExternalLogin

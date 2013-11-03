@@ -234,6 +234,7 @@
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\MessageRobotDb.cs" />
     <Compile Include="Models\Notice.cs" />
+    <Compile Include="Models\SmsVerificationModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -643,6 +644,7 @@
     <Content Include="Views\Customer\Create.cshtml" />
     <Content Include="Views\Customer\Edit.cshtml" />
     <Content Include="Views\Customer\Delete.cshtml" />
+    <Content Include="Views\Account\SmsVerification.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

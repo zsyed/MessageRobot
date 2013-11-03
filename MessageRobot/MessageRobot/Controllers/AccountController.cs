@@ -10,6 +10,8 @@ using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using MessageRobot.Filters;
 using MessageRobot.Models;
+using Twilio;
+using System.Configuration;
 
 namespace MessageRobot.Controllers
 {
@@ -79,9 +81,33 @@ namespace MessageRobot.Controllers
                 // Attempt to register the user
                 try
                 {
-                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
-                    WebSecurity.Login(model.UserName, model.Password);
-                    return RedirectToAction("Index", "Home");
+                    var smsVerificationCode =
+                        GenerateSimpleSmsVerificationCode();
+
+                    WebSecurity.CreateUserAndAccount(
+                        model.UserName,
+                        model.Password,
+                        new
+                        {
+                            model.Mobile,
+                            IsSmsVerified = false,
+                            SmsVerificationCode = smsVerificationCode
+                        },
+                        false);
+
+                    string smsNumber = "+17144691491";
+                    string smsText = string.Format("Your ASP.NET MVC 4 with Twilio " + "registration verification code is: {0}",smsVerificationCode);
+                    string twilioPhoneNumber = ConfigurationManager.AppSettings["FromPhoneNumber"];
+
+                    string AccountSid = ConfigurationManager.AppSettings["AccountSID"];
+                    string AuthToken = ConfigurationManager.AppSettings["AuthToken"];
+
+                    var twilio = new TwilioRestClient(AccountSid, AuthToken);
+                    var notice = twilio.SendSmsMessage(twilioPhoneNumber, smsNumber, smsText, "");
+
+                    Session["registrationModel"] = model;
+
+                    return RedirectToAction("SmsVerification", "Account");
                 }
                 catch (MembershipCreateUserException e)
                 {
@@ -92,6 +118,56 @@ namespace MessageRobot.Controllers
             // If we got this far, something failed, redisplay form
             return View(model);
         }
+
+        [AllowAnonymous]
+        public ActionResult SmsVerification()
+        {
+            return View(new SmsVerificationModel
+            {
+                Username =
+                    ((RegisterModel)Session["registrationModel"])
+                        .UserName
+            });
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public ActionResult SmsVerification(SmsVerificationModel smsVerificationModel)
+        {
+            if (ModelState.IsValid)
+            {
+                var userContext = new UsersContext();
+
+                var userProfile = userContext.UserProfiles
+                    .Single(u => u.UserName == smsVerificationModel.Username);
+
+                var registerModel = ((RegisterModel)Session["registrationModel"]);
+
+                if (userProfile.SmsVerificationCode == smsVerificationModel.SmsVerificationCode)
+                {
+                    WebSecurity.Login(userProfile.UserName, registerModel.Password);
+                    userProfile.IsSmsVerified = true;
+                    userContext.SaveChanges();
+                    return RedirectToAction("Index", "Home");
+                }
+            }
+            ModelState.AddModelError("", "The SMS verfication code was incorrect.");
+            // return RedirectToAction("SmsVerification", "Account");
+            return View("SmsVerification", smsVerificationModel);
+        }
+
+        private static string GenerateSimpleSmsVerificationCode()
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            var random = new Random();
+            return new string(
+                Enumerable.Repeat(chars, 6)
+                    .Select(s => s[random.Next(s.Length)])
+                    .ToArray());
+        }
+
+
 
         //
         // POST: /Account/Disassociate

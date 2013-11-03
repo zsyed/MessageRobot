@@ -1,0 +1,38 @@
+﻿@model MessageRobot.Models.SmsVerificationModel
+@{
+    //ViewBag.Title = "SMS Verification with MVC 4 & Twilio";
+    ViewBag.Title = "SmsVerification";
+}
+ 
+<hgroup class="title">
+    <h1>@ViewBag.Title.<br/></h1>
+    <h3>Please enter your SMS verification code to complete registration.</h3>
+</hgroup>
+ 
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+ 
+    @Html.HiddenFor(m => m.Username)
+ 
+    <fieldset>
+        <legend>SMS Verifcation Form</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.Username)
+                @Html.DisplayTextFor(m => m.Username) 
+                <br/><br/>
+            </li>
+            <li>
+                @Html.LabelFor(m => m.SmsVerificationCode)
+                @Html.TextBoxFor(m => m.SmsVerificationCode)
+            </li>
+        </ol>
+        <input type="submit" value="SmsVerification" />
+    </fieldset>
+}
+ 
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
